@@ -131,6 +131,13 @@ static NSString * const SUUpdaterDefaultsObservationContext = @"SUUpdaterDefault
 {
     BOOL shouldPrompt = NO;
     
+	/* 
+	
+	Sparkle can be really finicky with these settings it seems. I'm commenting this code out because
+	we do not want it to prompt - we just want it to check. Therefore, this code is not needed and is what
+	is triggering the check.
+	
+	
 	// If the user has been asked about automatic checks, don't bother prompting
 	if ([host objectForUserDefaultsKey:SUEnableAutomaticChecksKey])
     {
@@ -158,7 +165,8 @@ static NSString * const SUUpdaterDefaultsObservationContext = @"SUUpdaterDefault
         else
             shouldPrompt = YES;
     }
-    
+	*/
+	
     if (shouldPrompt)
     {
 		NSArray *profileInfo = [host systemProfile];
